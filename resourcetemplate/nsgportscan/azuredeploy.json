@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+      "_generator": {
+        "name": "mohamed faizal",
+        "version": "1.0"
+      }
+    },
+    "parameters": {
+      "queryName": {
+        "type": "string",
+        "defaultValue": "Scan Specific NSG Port",
+        "metadata": {
+          "description": "The name of the resource query."
+        }
+      },
+      "queryCode": {
+        "type": "string",
+        "defaultValue": "Resources | where type =~ 'microsoft.network/networksecuritygroups' and properties['securityRules'][0]['properties']['destinationPortRange'] == '3389' | project name, resourceGroup | sort by name asc",
+
+        "metadata": {
+          "description": "The Azure Resource Graph query to be saved to the shared query."
+        }
+      },
+      "queryDescription": {
+        "type": "string",
+        "defaultValue": "This shared query that find out specifc MSG Port open in NSG.",
+        "metadata": {
+          "description": "The description of the saved Azure Resource Graph query."
+        }
+      }
+    },
+    "resources": [
+      {
+        "type": "Microsoft.ResourceGraph/queries",
+        "apiVersion": "2018-09-01-preview",
+        "name": "[parameters('queryName')]",
+        "location": "global",
+        "properties": {
+          "query": "[parameters('queryCode')]",
+          "description": "[parameters('queryDescription')]"
+        }
+      }
+    ]
+  }
