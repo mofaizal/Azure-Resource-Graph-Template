@@ -7,6 +7,6 @@ This template deploys an Azure Resource Graph shared query which provide many AR
 ![Best Practice Check](https://azurequickstartsservice.blob.core.windows.net/badges/demos/resourcegraph-sharedquery-countos/BestPracticeResult.svg)
 ![Cred Scan Check](https://azurequickstartsservice.blob.core.windows.net/badges/demos/resourcegraph-sharedquery-countos/CredScanResult.svg)
 
-[![Deploy To Azure](../images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmofaizal%2FAzure-Resource-Graph-Template%2Fblob%2Fmain%2Fresourcetemplate%2Fnsgportscan%2Fazuredeploy.json) 
+[![Deploy To Azure](./images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmofaizal%2FAzure-Resource-Graph-Template%2Fmain%2Fresourcetemplate%2Fnsgportscan%2Fazuredeploy.json) 
 
-[![Visualize] (../images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fmofaizal%2FAzure-Resource-Graph-Template%2Fblob%2Fmain%2Fresourcetemplate%2Fnsgportscan%2Fazuredeploy.json)
+[![Visualize] (./images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fmofaizal%2FAzure-Resource-Graph-Template%2Fmain%2Fresourcetemplate%2Fnsgportscan%2Fazuredeploy.json)
