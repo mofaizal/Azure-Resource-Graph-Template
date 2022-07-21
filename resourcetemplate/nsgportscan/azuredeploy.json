@@ -53,5 +53,3 @@
       }
     ]
   }
-
-    "query": "let selectedCloud_RoleName = \"{SelectedCloudRole}\"; \r\nrequests\r\n| where timestamp >= ago(7d)\r\n| where cloud_RoleName == selectedCloud_RoleName\r\n| summarize Count = count() by operation_Name\r\n| order by Count desc\r\n| project v = operation_Name, t = operation_Name, s = false\r\n| union (datatable(v:string, t:string, s:boolean)[\r\n'*', 'All Operations', true\r\n])"
