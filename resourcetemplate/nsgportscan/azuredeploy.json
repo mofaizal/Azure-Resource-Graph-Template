@@ -15,9 +15,18 @@
           "description": "The name of the resource query."
         }
       },
+      "queryPort": {
+        "type": "string",
+        "defaultValue": "Scan Port no or range",
+
+        "metadata": {
+          "description": "Specifiy Port number to scan in the Security Rules"
+        }
+      },
+
       "queryCode": {
         "type": "string",
-        "defaultValue": "Resources | where type =~ 'microsoft.network/networksecuritygroups' and properties['securityRules'][0]['properties']['destinationPortRange'] == '3389' | project name, resourceGroup | sort by name asc",
+        "defaultValue": "Resources | where type =~ 'microsoft.network/networksecuritygroups' and properties['securityRules'][0]['properties']['destinationPortRange'] == **parameters('queryPort')**  | project name, resourceGroup | sort by name asc",
 
         "metadata": {
           "description": "The Azure Resource Graph query to be saved to the shared query."
@@ -44,3 +53,5 @@
       }
     ]
   }
+
+    "query": "let selectedCloud_RoleName = \"{SelectedCloudRole}\"; \r\nrequests\r\n| where timestamp >= ago(7d)\r\n| where cloud_RoleName == selectedCloud_RoleName\r\n| summarize Count = count() by operation_Name\r\n| order by Count desc\r\n| project v = operation_Name, t = operation_Name, s = false\r\n| union (datatable(v:string, t:string, s:boolean)[\r\n'*', 'All Operations', true\r\n])"

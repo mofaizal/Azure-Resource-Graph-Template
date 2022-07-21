@@ -1,5 +1,5 @@
 # Azure-Resource-Graph-Template
-This template deploys an Azure Resource Graph shared query which provide many ARM template and easy deployment to Azure Portal
+This template deploys an Azure Resource Graph shared query which provide many ARM templates to make life easy for deployment via Azure Portal
 # Resource Graph Template 
 
 ## Shared query that find out specifc Port open in NSG
